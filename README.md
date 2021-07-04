@@ -35,10 +35,14 @@ cat ~/.ssh/id_rsa.pub
 
 私信给管理员即可
 
-接下来需要在 `~/.ssh/config` 配置跳板机，打开该文件，添加如下配置（以 229 服务器为例）
+
+接下来有两种方法可以帮助连接服务器/主机
+##### 配置Config文件(推荐)
+
+需要在 `~/.ssh/config` 配置跳板机，打开该文件，添加如下配置（以 229 服务器为例）
 
 ```
-Host 192.168.2.*
+Host 192.168.2.* 
     ProxyJump jumper
 
 Host jumper
@@ -52,7 +56,16 @@ Host server229
     ProxyJump jumper
 ```
 
-即可通过 `ssh server229` 来访问服务器。
+即可通过 `ssh server229` 来从本地访问服务器, 同时可以通过`scp -r $FILENAME server229:/path/to/dst`进行文件传输，如果是服务器之间的传输，和以前的用法无异。
+
+##### 不配置config文件
+每次可以通过
+```
+ssh -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.$PORT
+ssh -r -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.$PORT:/path/to/dst
+```
+来从本地电脑访问服务器和传输文件
+
 
 #### Windows
 为了避免不必要的工作量，我们强烈推荐 Windows 用户使用 [MobaXterm](https://mobaxterm.mobatek.net/) 进行配置。在 MobaXterm 中打开 local terminal 后的配置方法与 MacOS/Linux 上完全相同。

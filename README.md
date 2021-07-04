@@ -55,6 +55,12 @@ Host server229
 即可通过 `ssh server229` 来访问服务器。
 
 #### Windows
+首先打开自带系统自带的cmd，输入
+```
+ssh-keygen
+```
+步骤同linux, Windows下的用户目录在`C:\User\$USERNAME\`中, 选择用文本编辑器打开`C:\User\$USERNAME\.ssh\rsa_id.pub`, 复制并私信管理员。
 
-
+登录方法有两种：
+##### 
 

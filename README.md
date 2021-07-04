@@ -37,7 +37,7 @@ cat ~/.ssh/id_rsa.pub
 
 
 接下来有两种方法可以帮助连接服务器/主机
-##### 配置Config文件(推荐)
+##### 1、配置Config文件(推荐)
 
 需要在 `~/.ssh/config` 配置跳板机，打开该文件，添加如下配置（以 229 服务器为例）
 
@@ -58,7 +58,7 @@ Host server229
 
 即可通过 `ssh server229` 来从本地访问服务器, 同时可以通过`scp -r $FILENAME server229:/path/to/dst`进行文件传输，如果是服务器之间的传输，和以前的用法无异。
 
-##### 不配置Config文件
+##### 2、不配置Config文件
 每次可以通过
 ```
 ssh -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.229

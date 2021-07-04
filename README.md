@@ -19,7 +19,7 @@
 
 同学们需要将 ssh key 发送给管理员，管理员会将其加入到跳板机的 authorized_keys 中
 
-#### Mac/Linux
+#### MacOS/Linux
 
 如果之前没有生成过 ssh key，可以通过如下命令生成
 
@@ -55,12 +55,6 @@ Host server229
 即可通过 `ssh server229` 来访问服务器。
 
 #### Windows
-首先打开自带系统自带的cmd，输入
-```
-ssh-keygen
-```
-步骤同linux, Windows下的用户目录在`C:\User\$USERNAME\`中, 选择用文本编辑器打开`C:\User\$USERNAME\.ssh\rsa_id.pub`, 复制并私信管理员。
+为了避免不必要的工作量，我们强烈推荐 Windows 用户使用 [MobaXterm](https://mobaxterm.mobatek.net/) 进行配置。在 MobaXterm 中打开 local terminal 后的配置方法与 MacOS/Linux 上完全相同。
 
-登录方法有两种：
-##### 
 

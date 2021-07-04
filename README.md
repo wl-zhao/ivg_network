@@ -39,17 +39,17 @@ cat ~/.ssh/id_rsa.pub
 
 ```
 Host 192.168.2.*
-	ProxyJump jumper
+    ProxyJump jumper
 
 Host jumper
-	Hostname ivg-lab.dynv6.net
-	Port 2222
-	User jumper
+    Hostname ivg-lab.dynv6.net
+    Port 2222
+    User jumper
 
 Host server229
-	Hostname 192.168.2.229
-	User zwl
-	ProxyJump jumper
+    Hostname 192.168.2.229
+    User zwl
+    ProxyJump jumper
 ```
 
 即可通过 `ssh server229` 来访问服务器。

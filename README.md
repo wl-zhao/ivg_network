@@ -61,8 +61,8 @@ Host server229
 ##### 不配置Config文件
 每次可以通过
 ```
-ssh -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.$PORT
-scp -r -J jumper@ivg-lab.dynv6.net:2222 $FILENAME $USER@192.168.2.$PORT:/path/to/dst
+ssh -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.229
+scp -r -J jumper@ivg-lab.dynv6.net:2222 $FILENAME $USER@192.168.2.229:/path/to/dst
 ```
 来从本地电脑访问服务器和传输文件
 

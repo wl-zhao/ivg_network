@@ -58,11 +58,11 @@ Host server229
 
 即可通过 `ssh server229` 来从本地访问服务器, 同时可以通过`scp -r $FILENAME server229:/path/to/dst`进行文件传输，如果是服务器之间的传输，和以前的用法无异。
 
-##### 不配置config文件
+##### 不配置Config文件
 每次可以通过
 ```
 ssh -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.$PORT
-ssh -r -J jumper@ivg-lab.dynv6.net:2222 $USER@192.168.2.$PORT:/path/to/dst
+scp -r -J jumper@ivg-lab.dynv6.net:2222 $FILENAME $USER@192.168.2.$PORT:/path/to/dst
 ```
 来从本地电脑访问服务器和传输文件
 

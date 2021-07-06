@@ -72,6 +72,38 @@ scp -r -J ivg_jump@ivg-lab.dynv6.net:2222 $FILENAME $USER@192.168.2.229:/path/to
 
 
 #### Windows
+
+##### MobaXTerm
 为了避免不必要的工作量，我们强烈推荐 Windows 用户使用 [MobaXterm](https://mobaxterm.mobatek.net/) 进行配置。在 MobaXterm 中打开 local terminal 后的配置方法与 MacOS/Linux 上完全相同。
 
+##### VSCode
+由于MobaXTerm的一些问题，我们还另外提供了VScode的连接教程
+首先下载[VScode](https://code.visualstudio.com/), 在安装时，记住一定要勾选“添加到PATH(重启后生效)”。等待安装后我们进入VScode
+选择侧边第五个图标(extensions), 点击搜索并下载SSH-Remote组件。
+安装完成后侧栏出现第六个图标，点击进入。
+点击“SSH Targets“边上的小齿轮，进入编辑config文件， Windows下config文件稍有不同
+```
+Host 192.168.2.*
+    ProxyCommand C:\Windows\System32\OpenSSH\ssh.exe -W %h:%p ivg_jump
+
+Host ivg_jump
+    HostName ivg-lab.dynv6.net
+    User ivg_jump
+    Port 2222
+    
+Host 228
+    HostName 192.168.2.228
+    User xumin
+    ProxyCommand C:\Windows\System32\OpenSSH\ssh.exe -W %h:%p ivg_jump
+```
+编辑结束保存后便可以观察到”SSH Targets“下出现`228` `ivg_jump`等条目，点击`228`后方的加号，进入链接模式。
+如果此时你已经找管理员完成了ivg_jump的激活，服务器的端口也被打开，那么等待输入目标服务器密码即可(如 228机器的 xumin用户)
+
+完成以上过程中，你也可以在cmd中使用
+```
+ssh 228
+scp -r $FILENAME 228:/path/to/dst
+
+```
+完成登入与文件传输
 

@@ -111,7 +111,6 @@ VScode中点击顶栏Terminal后选择 New Terminal可以在server上开启一�
 ```
 ssh 228
 scp -r $FILENAME 228:/path/to/dst
-
 ```
 快速完成登入与文件传输
 

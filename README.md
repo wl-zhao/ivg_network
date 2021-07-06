@@ -21,7 +21,7 @@
 
 ### SSH 客户端授权与配置
 
-同学们需要将 ssh key 发送给管理员，管理员会将其加入到跳板机的 authorized_keys 中
+同学们需要将**客户端**（用来连接服务器的设备）的 ssh key 发送给管理员，管理员会将其加入到跳板机的 authorized_keys 中
 
 #### MacOS/Linux
 

@@ -102,13 +102,16 @@ Host 228
     ProxyCommand C:\Windows\System32\OpenSSH\ssh.exe -W %h:%p ivg_jump
 ```
 编辑结束保存后便可以观察到”SSH Targets“下出现`228` `ivg_jump`等条目，点击`228`后方的加号，进入链接模式。
-如果此时你已经找管理员完成了ivg_jump的激活，服务器的端口也被打开，那么等待输入目标服务器密码即可(如 228机器的 xumin用户)
 
-完成以上过程中，你也可以在cmd中使用
+如果此时你已经找管理员完成了ivg_jump的激活，服务器的端口也被打开，那么等待输入目标服务器密码即可(第一次的流程为:1/选择平台(linux), 2/选择continue，3/输入密码)
+
+VScode中点击顶栏Terminal后选择 New Terminal可以在server上开启一个命令行
+
+完成以上过程后，你也可以在cmd中使用
 ```
 ssh 228
 scp -r $FILENAME 228:/path/to/dst
 
 ```
-完成登入与文件传输
+快速完成登入与文件传输
 

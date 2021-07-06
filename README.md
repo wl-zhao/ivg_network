@@ -78,10 +78,15 @@ scp -r -J ivg_jump@ivg-lab.dynv6.net:2222 $FILENAME $USER@192.168.2.229:/path/to
 
 ##### VSCode
 由于MobaXTerm的一些问题，我们还另外提供了VScode的连接教程
+
 首先下载[VScode](https://code.visualstudio.com/), 在安装时，记住一定要勾选“添加到PATH(重启后生效)”。等待安装后我们进入VScode
+
 选择侧边第五个图标(extensions), 点击搜索并下载SSH-Remote组件。
+
 安装完成后侧栏出现第六个图标，点击进入。
+
 点击“SSH Targets“边上的小齿轮，进入编辑config文件， Windows下config文件稍有不同
+
 ```
 Host 192.168.2.*
     ProxyCommand C:\Windows\System32\OpenSSH\ssh.exe -W %h:%p ivg_jump
